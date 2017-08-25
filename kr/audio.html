@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./jwplayer-nhac/nhac-all-3.0.0.css"></link>
+  <script src="./jwplayer-7.12.6-pro/jwplayer.js" type="text/javascript"></script>
+  <script>jwplayer.key="YgtWotBOi+JsQi+stgRlQ3SK21W2vbKi/K2V86kVbwU=";</script>
+  <script type="text/javascript">
+    function onPlayerLoginVip(label) {
+      console.log("onPlayerLoginVip", label);
+    }
+    function onPlayerAutoNext() {
+      console.log("onPlayerAutoNext");
+    }
+    function onPlayerAutoNextOn() {
+      document.getElementById("autoNextOn").style.display = 'block';
+      document.getElementById("autoNextOff").style.display = 'none';
+    }
+    function onPlayerAutoNextOff() {
+      document.getElementById("autoNextOn").style.display = 'none';
+      document.getElementById("autoNextOff").style.display = 'block';
+    }
+  </script>
+</head>
+<body style="margin:0">
+  <center>
+    <div id="control-button" style="padding-top: 4px;padding-bottom: 4px;">
+      <button id="autoNextOn" onclick="autoNextOnClick()">autoNext On</button>
+      <button id="autoNextOff" onclick="autoNextOffClick()" style="display: none;">autoNext Off</button>
+    </div>
+    <div id="my_video"></div>
+    <img src="./audio.jpg" style="padding-top: 4px;" />
+    <img src="./audio.png" style="padding-top: 0px;" />
+  </center>
+  <script type='text/javascript'>
+    var player = jwplayer('my_video');
+    player.setup({
+      width: 744,
+      height: 200,
+      base: './jwplayer-7.12.6-pro/',
+      /*sources: [
+        //{ file: './66f18.mp3?lossless', label: 'Lossless' },
+        { file: './66f18.mp3?hq', label: '320K' },
+        { file: './66f18.mp3', label: '128K' }
+      ],*/
+      file: "./66f18.mp3",
+      //file: "playlist.m3u8",
+      file: "./263468.mp3",
+      //file: "./156043.mp3",
+      //file: "./154917.mp3",
+      image: "./assets/bg.jpg",
+      title: "Một Ngày Mùa Đông - <font color='#c7c7c7'>Lê Hiếu</font>",
+      title: "Mình Yêu Nhau Yêu Nhau Bình Yên Thôi - Hà Anh Tuấn, Đinh Hương",
+      tracks: [{
+        file: "16e9198af4452d2d756cc373380b7f67_1073829669.vtt", 
+        file: "sonjlNq.vtt", 
+        //file: "93bdcd5ccd2048c2a5c70e081daed188_1074647050.vtt", 
+        kind: "captions", 
+        label: "Lời bài hát", 
+        "default": true
+      }],
+      captions: {
+        /*color: '#40ff91',*/
+        //color: '#ff0',
+        //fontSize: 32,
+        //fontSize: 16,
+        //backgroundOpacity: 0
+        //windowOpacity: 99
+      },
+      skin: {
+        name: "nhac"
+      },
+      plugins: {
+        "./jwplayer-nhac/nhac-audio-3.1.2.min.js": {
+          //showVIP: true
+        },
+      },
+      timeSliderAbove: true,
+      //primary: "html5",
+      //abouttext: "Nhac.vn - Nghe nhạc online, tải nhạc mp3 chất lượng cao",
+      aboutlink: "http://nhac.vn",
+      autostart: true,
+      repeat: true
+    });
+    jwplayer().on('error', function(evt) {
+      if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
+        if (evt.message.indexOf("No playable sources found") > 0)
+          alert('Trình duyệt của bạn không hỗ trợ định dạng video này. Vui lòng cần cài đặt Adobe Flash Player tại https://get.adobe.com/flashplayer hoặc chuyển sang sử dụng trình duyệt khác như Chrome, Cốc Cốc .v.v. Hotline CSKH: 1900 54 54 82 (nhánh 4)');
+      }
+    });
+    
+    function autoNextOnClick() {
+        document.getElementById("autoNextOn").style.display = 'none';
+        document.getElementById("autoNextOff").style.display = 'block';
+        setAutoNext(false);
+    }
+    function autoNextOffClick() {
+        document.getElementById("autoNextOn").style.display = 'block';
+        document.getElementById("autoNextOff").style.display = 'none';
+        setAutoNext(true);
+    }
+  </script>
+</body>
+</html>
