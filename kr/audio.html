@@ -62,6 +62,36 @@
         "./jwplayer-nhac/nhac-audio-3.1.2.min.js": {
           //showVIP: true
         },
+        "./jwplayer-nhac/data-1.0.0.min.js": {
+          /** Performance **/
+          performance: true,          //false true,  default true
+          perform_debug: true,        //false true,  default false
+          duration: 20,               //60 30 20 10, default 60
+          user_id: "15430399",
+          vega_id: "12018174",
+          msisdn: "0977972821",       //số điện thoại người dùng
+          package_id: 1,              //package_id hiện tại của người dùng; nếu không vip = 0
+          content_id: "93156",        //là id của song, hoặc id của video
+          album_id: "2897",
+          content_type: "song",       //loại nội dung (song,video,album)
+          utm_source: "",              //Bao gồm cả recommend và click vào tập tiếp theo: - utm_source của chiến dịch marketing | - Từ phần recommend là "v_rec" | - Từ phần gợi ý tập tiếp theo "v_next_ep"
+          utm_medium: "",
+          utm_term: "",
+          utm_content: "",
+          utm_campaign: "",
+          device_id: "",        //
+          channel: "WEB",             //wap, web, box, smartTV ....
+          session_id: "302c2a310cf8bac454f9daf5c8bbb17631eedf41",
+          url_referer: "https://nhac.vn/nhu-cai-lo-sambi-mr-a-mvM8A9",
+          action_type: "play_song",   //hành động của người dùng (play_song, play_video, play_album...)
+          player_type: "NotDRM",      //thông tin bản quyền (DRM, NotDRM)
+          service_id: 0,              //0: nhac.vn; 1: vt.nhac.vn ; (app = 0)
+          source_rec: "rec",          //Từ recommend là "rec", từ trong 1 album "next", từ auto play "auto" , người dùng chọn ngẫu nhiên "rand"
+          listen_state: "online",     //Trạng thái nghe nhạc của người dùng ["online","offline"]
+          other_info: "",             //"abc123"
+          expired_time: 1514768461,   //Ngày hết hạn của gói cước gần nhất của khách hàng , nếu không có hoặc ko vip = 0
+          version: "1.0"                 //Phiên bản build của app lên store. Ví dụ : 1.0
+        }
       },
       timeSliderAbove: true,
       //primary: "html5",
