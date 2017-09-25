@@ -35,18 +35,23 @@
   </center>
   <script type='text/javascript'>
     jwplayer('my_karaoke').setup({
-      width: 744,
-      height: 418,
+      width: 640,   //744
+      height: 480,  //418
       base: './jwplayer-7.12.6-pro/',
-      file: "https://youtu.be/B1KZWwxfoRs",
-      file: "con mua tinh yeu  karaoke  (ha anh tuan-phuong linh).mp4",
-      file: "7948941835862762728.mp3",
+      //file: "7948941835862762728.mp3",
+      //file: "https://youtu.be/B1KZWwxfoRs",
       file: "Anh Khong Niu Keo - Vy MJ ft Khac Viet KARAOKE.mp4",
-      title: "Cơn Mưa Tình Yêu - Hà Anh Tuấn , Phương Linh",
+      //file: "con mua tinh yeu  karaoke  (ha anh tuan-phuong linh).mp4",
+      //file: "Ngo - Quang Ha.mp4",
+      //file: "Tim Lai Bau Troi - Tuan Hung.mp4",
+      //title: "Cơn Mưa Tình Yêu - Hà Anh Tuấn , Phương Linh",
       tracks: [{
-        file: "802662759d2b29d39f7843fb76c5fa03_1074867402.vtt",
         file: "648516fc30726f0fb7a90e976a88ea58_1074041549.vtt",
-        file: "648516fc30726f0fb7a90e976a88ea58_1074041549.srt",
+        //file: "802662759d2b29d39f7843fb76c5fa03_1074867402.vtt",
+        //file: "648516fc30726f0fb7a90e976a88ea58_1074041549.srt",
+        //file: "db02d66a833114f8f18331c51718ecd9_1074038612.srt",
+        //file: "1f56585140a5daf96c90bfb8d888c688_1073829745.srt",
+        //file: "fcbdd21361d97b35da5b8411989bd109_1074094151.srt",
         kind: "captions", 
         label: "Lời bài hát", 
         "default": true
@@ -55,7 +60,7 @@
       plugins: {
         "./jwplayer-nhac/nhac-audio-3.1.3.min.js": {
           resounded: true,          //false true,  default true
-          lyric_debug: true,        //false true,  default false
+          lyric_debug: false,        //false true,  default false
         }
       },
       skin: {
