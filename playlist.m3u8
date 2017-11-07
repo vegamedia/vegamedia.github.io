@@ -1,0 +1,8 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:BANDWIDTH=500000,NAME="240p",CODECS="avc1.66.30,mp4a.40.2",RESOLUTION=426x236
+http://localhost/git/nhac/hls/chunklist_b500000.m3u8?v=3
+#EXT-X-STREAM-INF:BANDWIDTH=800000,NAME="360p",CODECS="avc1.66.30,mp4a.40.2",RESOLUTION=640x360
+http://localhost/git/nhac/hls/chunklist_b800000.m3u8?v=3
+#EXT-X-STREAM-INF:BANDWIDTH=1100000,NAME="480p",CODECS="avc1.77.30,mp4a.40.2",RESOLUTION=852x476
+http://localhost/git/nhac/hls/chunklist_b1100000.m3u8?v=3
