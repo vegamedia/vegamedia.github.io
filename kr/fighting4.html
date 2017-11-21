@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./jwplayer-nhac/nhac-all-3.0.2.css"></link>
+  <script src="./jwplayer-7.12.11-pro/jwplayer.js" type="text/javascript"></script>
+  <script>jwplayer.key="YgtWotBOi+JsQi+stgRlQ3SK21W2vbKi/K2V86kVbwU=";</script>
+  <style>
+    .jw-skin-nhac .jw-controlbar-center-group,
+    .jw-skin-nhac .jw-text-elapsed,
+    .jw-skin-nhac.jw-flag-time-slider-above:not(.jw-flag-ads-googleima).jwplayer:not(.jw-breakpoint-0) .jw-text-duration {
+      display: none;
+    }
+  </style>
+</head>
+<body style="margin:0">
+  <center><br>
+    <div id="my_video"></div>
+  </center>
+  <script type='text/javascript'>
+    var player = jwplayer('my_video');
+    player.setup({
+      width: 744,
+      height: 200,
+      base: './jwplayer-7.12.11-pro/',
+      file: "./326595.mp3",
+      image: "./sing_652x305.jpg",
+      title: "Bài hát số 1",
+      skin: {
+        name: "nhac"
+      },
+      timeSliderAbove: true,
+      //controls: false,
+      //primary: "html5",
+      abouttext: "Nhac.vn - Game Đấu Trường Âm Nhạc",
+      aboutlink: "http://nhac.vn",
+      mute: false,
+      autostart: true,
+      repeat: true
+    });
+    player.on('time', function(evt){
+      //console.log(evt, evt.position);
+      if (evt.position < 60) {
+        player.seek(60);
+      } else if (evt.position > 73) {
+        player.seek(60);
+      }
+    });
+  </script>
+</body>
+</html>
