@@ -13,16 +13,23 @@
   </center>
   <script type='text/javascript'>
     var vid = document.getElementById("player-minigame");
+    var img = document.getElementById('play_btn');
+    
+    vid.onloadstart = function() {
+      console.log("The video is onload start", vid.currentTime);
+    };
     vid.onplaying = function() {
       console.log("The video is now playing", vid.currentTime);
       img.src = "pause-icon.png";
+    };
+    vid.ontimeupdate = function() {
+      //console.log("The video is time update", vid.currentTime);
       if (vid.currentTime < 60) {
         vid.currentTime = 60;
-      } else if (vid.currentTime > 73) {
+      } else if (vid.currentTime > 70) {
         vid.currentTime = 60;
       }
     };
-    var img = document.getElementById('play_btn');
     img.onclick = function() {
       console.log("onclick", img.src);
       if (vid.paused) {
