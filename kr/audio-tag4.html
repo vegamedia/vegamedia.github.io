@@ -15,6 +15,7 @@
     var vid = document.getElementById("player-minigame");
     vid.onplaying = function() {
       console.log("The video is now playing", vid.currentTime);
+      img.src = "pause-icon.png";
       if (vid.currentTime < 60) {
         vid.currentTime = 60;
       } else if (vid.currentTime > 73) {
@@ -23,7 +24,14 @@
     };
     var img = document.getElementById('play_btn');
     img.onclick = function() {
-      vid.play();
+      console.log("onclick", img.src);
+      if (vid.paused) {
+        vid.play();
+        img.src = "pause-icon.png";
+      } else {
+        vid.pause();
+        img.src = "play-icon.png";
+      }
     };
   </script>
 </body>
