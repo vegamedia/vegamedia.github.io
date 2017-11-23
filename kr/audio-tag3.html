@@ -8,7 +8,8 @@
     <audio id="player-minigame" controls autoplay preload="auto">
       <source src="./326595.mp3" type="audio/mpeg">
       Your browser does not support the audio tag.
-    </audio> 
+    </audio><br/>
+    <img id="play_btn" width="100" hight="100" src="play-icon.png">
   </center>
   <script type='text/javascript'>
     var vid = document.getElementById("player-minigame");
@@ -19,6 +20,10 @@
       } else if (vid.currentTime > 73) {
         vid.currentTime = 60;
       }
+    };
+    var img = document.getElementById('play_btn');
+    img.onclick = function() {
+      vid.play();
     };
   </script>
 </body>
