@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>videojs5-rtmp-source-handler</title>
+  <link rel="stylesheet" href="./video-js-5.20.4/video-js.min.css">
+  <script src="./video-js-5.20.4/ie8/videojs-ie8.min.js"></script>
+  <script src="./video-js-5.20.4/video.min.js" type="text/javascript"></script>
+  <!--script src="./video-js-5.20.4/lang/vi.js"></script-->
+  <style>
+    h1,h2,h3{color: orange;}
+  </style>
+  <script type="text/javascript">
+    function jwLiveEventFinished() {
+      console.log("::::jwLiveEventFinished::::");
+    }
+    var myFile = "http://wowza.jwplayer.com:1935/live/jelly.stream/playlist.m3u8";
+    if (location.search) {
+      myFile = location.search.split('file=')[1];
+      myFile = myFile.replace('%20http', 'http');
+    }
+  </script>
+</head>
+<body bgcolor="#E6E6FA" style="margin:0">
+    <video id="hlsjshandler" crossorigin="anonymous" class="video-js vjs-big-play-centered" controls loop preload="auto" width="888" height="500" poster="http://vjs.zencdn.net/v/oceans.png" data-setup='{"language":"vi"}'>
+      <!--source src="https://playertest.longtailvideo.com/adaptive/eleph-audio/playlist.m3u8" type="application/x-mpegURL"-->
+      <!--source src="rtmp://cp67126.edgefcs.net/ondemand/&mp4:mediapm/ovp/content/test/video/spacealonehd_sounas_640_300.mp4" type='rtmp/mp4'-->
+      <!--source src="rtmp://live.8bem.net/linkkiwi" type='rtmp/mp4'-->
+      <!--source src="rtmp://live.8bem.net/lycherry" type='rtmp/mp4'-->
+      <source src="rtmp://live.8bem.net/trinhchannel" type='rtmp/mp4'>
+      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+    </video><br>
+  </center>
+  <script type='text/javascript'>
+    /*var player = videojs("hlsjshandler").ready(function(){
+      this.src({"type":"application/x-mpegURL", "src":myFile});
+      this.play();
+      //this.qualityPickerPlugin();
+    });*/
+    
+    function switchMp4() {
+      player.src({"type":"video/mp4", "src":"http://vjs.zencdn.net/v/oceans.mp4"});
+      player.play();
+    };
+    function switchHls() {
+      player.src({"type":"application/x-mpegURL", "src":"http://playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8"});
+      player.play();
+      //player.qualityPickerPlugin();
+    };
+  </script>
+</body>
+</html>
