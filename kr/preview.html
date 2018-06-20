@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./jwplayer-8.4.0/jwplayer.js" type="text/javascript"></script>
+</head>
+<body>
+  <center>
+    <div id='myvideo'></div>
+  </center>
+  <script type='text/javascript'>
+    jwplayer.key = "3SYLbRo6MN5cBDxwpZh3dl1gb0lMTUOos31M5hoAlf4=";
+    jwplayer('myvideo').setup({
+      base: './jwplayer-8.4.0/',
+      width: '680',
+      height: '382',
+      file: "http://vjs.zencdn.net/v/oceans.mp4",
+      //file: "http://playertest.longtailvideo.com/adaptive/bbbfull/bbbfull.m3u8",
+      image:'preview.jpg',
+      skin: {
+        controlbar: {
+          "icons": "#ffffff",
+          "iconsActive": "#f1c40f"
+        }
+      },
+      abouttext: "Ads Video Player",
+      aboutlink: "https://www.jwplayer.com",
+      autostart: true,
+      advertising: {
+        client: 'vast',
+        tag: 'https://playertest.longtailvideo.com/vast-30s-ad.xml',
+        //tag: 'https://developer.jwplayer.com/jw-player/demos/advanced/ad-rules/assets/preroll.xml',
+        skipoffset: 10,
+        skipmessage: 'Skip this ad in XX'
+      }
+    });
+  </script>
+</body>
+</html>
